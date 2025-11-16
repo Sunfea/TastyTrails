@@ -11,7 +11,7 @@ if [ "$RAILWAY_ENVIRONMENT" = "" ]; then
 else
     # In Railway environment, wait a bit for services to be ready
     echo "Waiting for Railway services to be ready..."
-    sleep 5
+    sleep 15
 fi
 
 # Run migrations

@@ -22,6 +22,7 @@ from django.shortcuts import redirect
 from django.http import JsonResponse
 
 def health_check(request):
+    # Simple health check that doesn't require HTTPS redirect
     return JsonResponse({"status": "healthy", "service": "django"})
 
 urlpatterns = [

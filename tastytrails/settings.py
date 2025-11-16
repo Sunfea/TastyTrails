@@ -34,7 +34,7 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,*.railway.a
 
 # Security settings for production
 if not DEBUG:
-    # HTTPS settings
+    # HTTPS settings - but allow health checks without redirect
     SECURE_SSL_REDIRECT = True
     SECURE_HSTS_SECONDS = 31536000  # 1 year
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
