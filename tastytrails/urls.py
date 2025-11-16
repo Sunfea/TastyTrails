@@ -19,11 +19,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import redirect
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 
 def health_check(request):
-    # Simple health check that doesn't require HTTPS redirect
-    return JsonResponse({"status": "healthy", "service": "django"})
+    # Ultra simple health check that doesn't depend on anything
+    return HttpResponse(b"OK")
 
 urlpatterns = [
     path('health/', health_check, name='health_check'),

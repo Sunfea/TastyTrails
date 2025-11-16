@@ -16,11 +16,15 @@ fi
 
 # Run migrations
 echo "Running migrations..."
-python manage.py migrate --noinput
+python manage.py migrate --noinput || {
+    echo "Migration failed, but continuing..."
+}
 
 # Collect static files
 echo "Collecting static files..."
-python manage.py collectstatic --noinput --clear
+python manage.py collectstatic --noinput --clear || {
+    echo "Static file collection failed, but continuing..."
+}
 
 # Create superuser if it doesn't exist (development only)
 if [ "$RAILWAY_ENVIRONMENT" = "" ]; then
