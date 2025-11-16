@@ -8,6 +8,10 @@ if [ "$RAILWAY_ENVIRONMENT" = "" ]; then
         sleep 1
     done
     echo "PostgreSQL is ready!"
+else
+    # In Railway environment, wait a bit for services to be ready
+    echo "Waiting for Railway services to be ready..."
+    sleep 5
 fi
 
 # Run migrations
