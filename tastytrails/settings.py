@@ -29,8 +29,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-=z+c8c=zosse-gubf_=nv
 # DEBUG should be False in production
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,*.railway.app,tastytrails-production.up.railway.app').split(',')
-# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,*.railway.app,healthcheck.railway.app').split(',')
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,*.railway.app,tastytrails-production.up.railway.app').split(',')
+ALLOWED_HOSTS = [*]
 
 # Security settings for production
 if not DEBUG:
